@@ -9,7 +9,7 @@ Wish you could send secret messages across the classroom without any trace? Now 
 
 | Schematic | PCB | 3D Model
 |:-:|:-:|:-:|
-| <img src="https://github.com/user-attachments/assets/e73ae4a2-949e-41c0-bf28-f22ce5acc293" alt="Schematic" width="400"/> | <img src="https://github.com/user-attachments/assets/22f5013c-6c5d-4f50-9ade-b81c958a16f3" alt="PCB" width="400"/> |<img src="https://github.com/user-attachments/assets/b10a42bf-feab-4a9b-b6b2-ddb9c8ca17d2" alt="3D Model" width="400"/> |
+| <img src="https://github.com/user-attachments/assets/e73ae4a2-949e-41c0-bf28-f22ce5acc293" alt="Schematic" width="400"/> | <img src="https://github.com/user-attachments/assets/51fe4471-e78b-4e95-b5c9-11dba413174d" alt="PCB" width="400"/> |<img src="https://github.com/user-attachments/assets/dc4132f7-3ff5-46d9-91dc-57e753ac04e8" alt="3D Model" width="400"/> |
 
 Key 1 - Dot
 <br>
