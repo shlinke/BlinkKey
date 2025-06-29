@@ -1,5 +1,5 @@
 # BlinkKey
-A 4k and 4 LED controller board built for transmitting morse code accross 6 feet (or any distance someone can see it)
+A 4k and 4 LED controller board built for transmitting morse code across  6 feet (or any distance someone can see it)
 <br>
 Wish you could send secret messages across the classroom without any trace? Now you can!
 <br>
