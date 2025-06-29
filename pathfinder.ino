@@ -1,5 +1,3 @@
-#include <Keyboard.h>
-
 const int BUT1 = D0;
 const int BUT2 = D1;
 const int BUT3 = D2;
@@ -10,46 +8,48 @@ const int LED2 = D5;
 const int LED3 = D6;
 const int LED4 = D7;
 
-const char KEY1 = 'd';
-const char KEY2 = 'f';
-const char KEY3 = 'j';
-const char KEY4 = 'k';
-
-bool keyStates[4] = { false, false, false, false };
-
 void setup() {
-  pinMode(BUT1, INPUT_PULLUP);
-  pinMode(BUT2, INPUT_PULLUP);
-  pinMode(BUT3, INPUT_PULLUP);
-  pinMode(BUT4, INPUT_PULLUP);
 
-  pinMode(LED1, OUTPUT);
-  pinMode(LED2, OUTPUT);
-  pinMode(LED3, OUTPUT);
-  pinMode(LED4, OUTPUT);
+    pinMode(BUT1, INPUT);
+    pinMode(BUT2, INPUT);
+    pinMode(BUT3, INPUT);
+    pinMode(BUT4, INPUT);
 
-  Keyboard.begin();
+    pinMode(LED1, OUTPUT);
+    pinMode(LED2, OUTPUT);
+    pinMode(LED3, OUTPUT);
+    pinMode(LED4, OUTPUT);
+
+long startTime = millis();
 }
 
 void loop() {
-  handleButton(BUT1, LED1, KEY1, 0);
-  handleButton(BUT2, LED2, KEY2, 1);
-  handleButton(BUT3, LED3, KEY3, 2);
-  handleButton(BUT4, LED4, KEY4, 3);
+    long but1time;
+    long but2time;
+    long but3time;
+    long but4time;
 }
 
-void handleButton(int buttonPin, int ledPin, char keyChar, int index) {
-  if (digitalRead(buttonPin) == LOW) {
-    digitalWrite(ledPin, HIGH);
-    if (!keyStates[index]) {
-      Keyboard.press(keyChar);
-      keyStates[index] = true;
-    }
-  } else {
-    digitalWrite(ledPin, LOW);
-    if (keyStates[index]) {
-      Keyboard.release(keyChar);
-      keyStates[index] = false;
-    }
-  }
+if (digitalRead(BUT1) == HIGH) {
+but1time = millis(); digitalWrite(LED1, HIGH);
+} else {
+digitalWrite(LED1, LOW);
+}
+
+if (digitalRead(BUT2) == HIGH) {
+but2time = millis(); digitalWrite(LED2, HIGH);
+} else {
+digitalWrite(LED2, LOW);
+}
+
+if (digitalRead(BUT3) == HIGH) {
+but3time = millis(); digitalWrite(LED3, HIGH);
+} else {
+digitalWrite(LED3, LOW);
+}
+
+if (digitalRead(BUT4) == HIGH) {
+but4time = millis(); digitalWrite(LED4, HIGH);
+} else {
+digitalWrite(LED4, LOW);
 }
