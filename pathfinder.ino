@@ -12,6 +12,7 @@ bool keyStates[4] = { false, false, false, false };
 unsigned long led1OffTime = 0;
 unsigned long led2OffTime = 0;
 unsigned long led3OffTime = 0;
+String currentInput = "";
 
 void setup() {
   pinMode(BUT1, INPUT);
@@ -31,6 +32,7 @@ void loop() {
 // Dot .
   if (digitalRead(BUT1) == HIGH) {
     led1OffTime = now + 250;
+    currentInput += ".";
   }
   if (now < led1OffTime) {
     digitalWrite(LED1, HIGH);
@@ -41,6 +43,7 @@ void loop() {
 // Dash -
   if (digitalRead(BUT2) == HIGH) {
     led2OffTime = now + 1000;
+    currentInput += "-";
   }
   if (now < led2OffTime) {
     digitalWrite(LED2, HIGH);
@@ -51,6 +54,7 @@ void loop() {
 // Space _
   if (digitalRead(BUT3) == HIGH) {
     led3OffTime = now + 2000;
+    currentInput += "_";
   }
   if (now < led3OffTime) {
     digitalWrite(LED1, HIGH);
@@ -64,12 +68,32 @@ void loop() {
     digitalWrite(LED4, LOW);
   }
 
-// Clear screen
+// Enter
   if (digitalRead(BUT4) == HIGH) {
+    if (currentInput == ".....--.-.-.-_-.-..-....--...") {
+      //                  cool message ^
+      digitalWrite(LED1, HIGH);
+      led1OffTime = now + 250;
+      digitalWrite(LED2, HIGH);
+      led2OffTime = now + 250;
+      digitalWrite(LED3, HIGH);
+      led3OffTime = now + 250;
+      digitalWrite(LED4, HIGH);
+      led4OffTime = now + 250;
+      digitalWrite(LED3, HIGH);
+      led3OffTime = now + 250;
+      digitalWrite(LED2, HIGH);
+      led2OffTime = now + 250;
+      digitalWrite(LED1, HIGH);
+      led1OffTime = now + 250;
+      currentInput = "";
+    } else {
     digitalWrite(LED1, LOW);
     digitalWrite(LED2, LOW);
     digitalWrite(LED3, LOW);
     digitalWrite(LED4, LOW);
+    currentInput = "";
+    }
   } else {
     digitalWrite(LED4, LOW);
   }
